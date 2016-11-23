@@ -15,14 +15,14 @@ public class MuggleActivity extends AppCompatActivity {
 
         mTextClock = findViewById(R.id.text_clock);
 
-        lihang test001 shi sb
-
-                lihang test002
-
-            taozitest003
-
-                    taozitest004;
+        lihang test001
+        lihang test002  x2
+                fasdfa
+        lihang test003  x3
         taozi
+
+                taozishabi
+
     }
 
 }
