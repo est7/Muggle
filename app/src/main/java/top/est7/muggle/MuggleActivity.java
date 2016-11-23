@@ -14,6 +14,8 @@ public class MuggleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_muggle);
 
         mTextClock = findViewById(R.id.text_clock);
+
+        lihang test01
     }
 
 }
