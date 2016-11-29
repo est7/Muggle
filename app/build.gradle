@@ -16,7 +16,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false //是否开启混淆
+            shrinkResources false // 是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -72,8 +73,15 @@ dependencies {
 
     //guava太大,视情况考虑
     //compile "com.google.guava:guava:$rootProject.guavaVersion"
-
-
-
 }
 
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+        // 删除unaligned apk
+        if (output.zipAlign != null) {
+            output.zipAlign.doLast {
+                output.zipAlign.inputFile.delete()
+            }
+        }
+    }
+}
